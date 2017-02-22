@@ -1,0 +1,343 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.clearfix:before, .clearfix:after {
+  content: '';
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+html {
+  height: 100%;
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-weight: 400; }
+
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  color: #7b7b7b; }
+
+ul {
+  display: block;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px; }
+
+#root {
+  height: 100%; }
+
+.page-background {
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  background: #efefef; }
+
+.app-container {
+  height: 100%;
+  position: relative; }
+
+.admin-dashboard {
+  min-height: 100%;
+  margin: 0px auto;
+  background: #fff; }
+
+/*DASHBOARD SIDEBAR*/
+.sidebar-wrapper {
+  width: 260px;
+  left: 0px;
+  height: 100%;
+  position: fixed;
+  background-image: url("/static/images/sidebar.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .sidebar-wrapper .sidebar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding: 10px;
+    z-index: 1;
+    background: #7055c1;
+    background: -webkit-linear-gradient(right, #7055c1, rgba(112, 85, 193, 0.7));
+    background: -o-linear-gradient(top, #7055c1, rgba(112, 85, 193, 0.7));
+    background: -moz-linear-gradient(top, #7055c1, rgba(112, 85, 193, 0.7));
+    background: linear-gradient(to bottom, #7055c1, rgba(112, 85, 193, 0.7)); }
+    .sidebar-wrapper .sidebar .sidebar-header {
+      padding: 40px 20px 40px;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      font-weight: 300;
+      font-size: 30px; }
+    .sidebar-wrapper .sidebar .sidebar-menu {
+      padding: 20px 5px; }
+      .sidebar-wrapper .sidebar .sidebar-menu li {
+        display: block;
+        border-radius: 5px;
+        overflow: hidden; }
+        .sidebar-wrapper .sidebar .sidebar-menu li i {
+          margin-right: 10px; }
+        .sidebar-wrapper .sidebar .sidebar-menu li a {
+          display: block;
+          padding: 18px 25px 20px;
+          text-decoration: none;
+          font-weight: 400;
+          color: #fff;
+          letter-spacing: 1px; }
+        .sidebar-wrapper .sidebar .sidebar-menu li .active {
+          background: rgba(255, 255, 255, 0.2); }
+    .sidebar-wrapper .sidebar .user-info {
+      position: absolute;
+      bottom: 0px;
+      padding: 17px 25px 21px;
+      color: #fff;
+      letter-spacing: 1px; }
+      .sidebar-wrapper .sidebar .user-info .user-info-wrapper {
+        margin-right: 0px; }
+        .sidebar-wrapper .sidebar .user-info .user-info-wrapper .user-name {
+          display: block;
+          font-size: 15px;
+          font-weight: 700; }
+          .sidebar-wrapper .sidebar .user-info .user-info-wrapper .user-name i {
+            font-size: 13px;
+            cursor: pointer;
+            color: #fff; }
+            .sidebar-wrapper .sidebar .user-info .user-info-wrapper .user-name i:hover {
+              color: #000; }
+        .sidebar-wrapper .sidebar .user-info .user-info-wrapper .user-role {
+          font-size: 12px;
+          text-transform: uppercase; }
+      .sidebar-wrapper .sidebar .user-info .logout {
+        color: #fff;
+        font-size: 12px;
+        text-decoration: none; }
+        .sidebar-wrapper .sidebar .user-info .logout:hover {
+          color: #000; }
+
+/*DASHBOARD CONTENT*/
+.bashboard-content {
+  margin: 0px 0px 0px 260px;
+  position: relative; }
+
+/*STAFF SECTION*/
+.staff {
+  margin: 0px auto; }
+
+/*ADD STAFF FORM*/
+.add-member-form {
+  padding: 30px 20px 30px;
+  background: #ebe5ff;
+  text-align: center; }
+  .add-member-form form {
+    width: 660px;
+    margin: auto; }
+  .add-member-form label {
+    display: inline-block;
+    margin-right: 20px; }
+    .add-member-form label span {
+      display: block;
+      padding-bottom: 3px;
+      width: 226px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 700;
+      color: #7055c1; }
+    .add-member-form label input {
+      display: block;
+      padding: 10px 15px;
+      width: 100%;
+      border: 0;
+      border-radius: 4px;
+      color: #7b7b7b; }
+  .add-member-form button {
+    padding: 8px 15px;
+    border: 0px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: "Quicksand";
+    color: #fff;
+    background: #7055c1;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
+    .add-member-form button:hover {
+      background: #957ddc; }
+  .add-member-form .error-indicator {
+    display: block;
+    padding: 10px 0px 0px 34px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    color: #da3400; }
+
+/*STAFF LIST*/
+.staff-list-member {
+  padding: 0px 50px;
+  overflow: hidden;
+  min-height: 70px;
+  margin-top: -1px;
+  border-bottom: 1px solid #d7cef3; }
+  .staff-list-member:hover {
+    background: rgba(255, 255, 255, 0.4); }
+  .staff-list-member .member-info {
+    padding: 23px 0px;
+    width: 80%;
+    float: left; }
+    .staff-list-member .member-info .member-name {
+      font-size: 18px;
+      font-weight: 700; }
+    .staff-list-member .member-info .member-role {
+      font-size: 13px;
+      letter-spacing: 1px; }
+  .staff-list-member .member-actions {
+    width: 20%;
+    float: left;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: right;
+    padding: 10px 0px; }
+    .staff-list-member .member-actions .member-action {
+      display: inline-block;
+      margin: 20px 0px;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+      background: rgba(112, 85, 193, 0.25);
+      color: #fff;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
+      .staff-list-member .member-actions .member-action:hover {
+        background: rgba(112, 85, 193, 0.5); }
+
+/*PASSWORD FORM*/
+.password-form {
+  padding: 30px 20px 30px;
+  background: #ebe5ff;
+  text-align: center; }
+  .password-form form {
+    width: 455px;
+    margin: auto; }
+  .password-form label {
+    display: inline-block;
+    margin-right: 20px; }
+    .password-form label span {
+      display: block;
+      padding-bottom: 3px;
+      width: 226px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 700;
+      color: #7055c1; }
+    .password-form label input {
+      display: block;
+      padding: 10px 15px;
+      width: 100%;
+      border: 0;
+      border-radius: 4px;
+      color: #7b7b7b; }
+  .password-form button {
+    padding: 8px 15px;
+    border: 0px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: "Quicksand";
+    color: #fff;
+    background: #7055c1;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
+    .password-form button:hover {
+      background: #957ddc; }
+  .password-form .error-indicator {
+    display: block;
+    padding: 10px 0px 0px 34px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    color: #da3400; }
+
+.login-form-container {
+  height: 100%;
+  display: flex;
+  justify-content: center; }
+
+.login-form-centered {
+  align-self: center;
+  text-align: center; }
+
+/*LOGIN FORM*/
+.login-form {
+  border: 1px solid #eee8ff;
+  border-radius: 4px;
+  padding: 50px 70px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
+  .login-form:hover {
+    border: 1px solid #e0d6fd;
+    background: #f7f7f7;
+    padding: 80px 100px; }
+  .login-form label {
+    padding-top: 10px;
+    display: block; }
+    .login-form label span {
+      display: block;
+      padding-bottom: 5px;
+      text-align: left;
+      color: #ababab;
+      font-size: 14px;
+      font-weight: 700; }
+    .login-form label input {
+      display: block;
+      padding: 12px 20px;
+      font-size: 15px;
+      border: 2px solid #e0d6fd;
+      border-radius: 30px;
+      outline: none;
+      min-width: 260px; }
+      .login-form label input:focus {
+        border: 2px solid #7055c1; }
+  .login-form button {
+    display: block;
+    margin: 20px 0px 0px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    background: #7055c1;
+    color: #fff;
+    border: 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
+    .login-form button:hover {
+      background: #967ee0; }
+  .login-form .error-indicator {
+    display: block;
+    padding: 15px 0px 0px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    color: #da3400; }
