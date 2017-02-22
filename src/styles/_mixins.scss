@@ -1,0 +1,13 @@
+@mixin smoth($timeframe) {
+	-webkit-transition: all $timeframe ease-out;
+	-moz-transition: all $timeframe ease-out;
+	-ms-transition: all $timeframe ease-out;
+	-o-transition: all $timeframe ease-out;
+	transition: all $timeframe ease-out;
+}
+
+@mixin mobile {
+	@media only screen and (max-width: 700px) {
+		@content;
+	}
+}

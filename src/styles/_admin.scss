@@ -1,0 +1,282 @@
+.page-background {
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	background: #efefef;
+}
+
+.app-container {
+	height: 100%;
+	position: relative;
+}
+
+.admin-dashboard {
+	min-height: 100%;
+	margin: 0px auto;
+	background: #fff;
+}
+
+/*DASHBOARD SIDEBAR*/
+
+.sidebar-wrapper {
+	width: 260px;
+	left: 0px;
+	height: 100%;
+	position: fixed;
+	background-image: url('/static/images/sidebar.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	.sidebar {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		padding: 10px;
+		z-index: 1;
+		background: #7055c1;
+		background: -webkit-linear-gradient(right, rgba(112, 85, 193, 1), rgba(112, 85, 193, 0.7));
+		background: -o-linear-gradient(top, rgba(112, 85, 193, 1), rgba(112, 85, 193, 0.7));
+		background: -moz-linear-gradient(top, rgba(112, 85, 193, 1), rgba(112, 85, 193, 0.7));
+		background: linear-gradient(to bottom, rgba(112, 85, 193, 1), rgba(112, 85, 193, 0.7));
+		.sidebar-header {
+			padding: 40px 20px 40px;
+			text-align: center;
+			text-transform: uppercase;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+			color: #fff;
+			font-weight: 300;
+			font-size: 30px;
+		}
+		.sidebar-menu {
+			padding: 20px 5px;
+			li {
+				display: block;
+				border-radius: 5px;
+				overflow: hidden;
+				i {
+					margin-right: 10px;
+				}
+				a {
+					display: block;
+					padding: 18px 25px 20px;
+					text-decoration: none;
+					font-weight: 400;
+					color: #fff;
+					letter-spacing: 1px;
+				}
+				.active {
+					background: rgba(255, 255, 255, 0.2);
+				}
+			}
+		}
+		.user-info {
+			position: absolute;
+			bottom: 0px;
+			padding: 17px 25px 21px;
+			color: #fff;
+			letter-spacing: 1px;
+			.user-info-wrapper {
+				margin-right: 0px;
+				.user-name {
+					display: block;
+					font-size: 15px;
+					font-weight: 700;
+					i {
+						font-size: 13px;
+						cursor: pointer;
+						color: #fff;
+						&:hover {
+							color: #000;
+						}
+					}
+				}
+				.user-role {
+					font-size: 12px;
+					text-transform: uppercase;
+				}
+			}
+			.logout {
+				color: #fff;
+				font-size: 12px;
+				text-decoration: none;
+				&:hover {
+					color: #000;
+				}
+			}
+		}
+	}
+}
+
+/*DASHBOARD CONTENT*/
+
+.bashboard-content {
+	margin: 0px 0px 0px 260px;
+	position: relative;
+}
+
+/*STAFF SECTION*/
+
+.staff {
+	margin: 0px auto;
+}
+
+/*ADD STAFF FORM*/
+
+.add-member-form {
+	padding: 30px 20px 30px;
+	background: #ebe5ff;
+	text-align: center;
+	form {
+		width: 660px;
+		margin: auto;
+	}
+	label {
+		display: inline-block;
+		margin-right: 20px;
+		span {
+			display: block;
+			padding-bottom: 3px;
+			width: 226px;
+			text-align: left;
+			font-size: 13px;
+			font-weight: 700;
+			color: #7055c1;
+		}
+		input {
+			display: block;
+			padding: 10px 15px;
+			width: 100%;
+			border: 0;
+			border-radius: 4px;
+			color: #7b7b7b;
+		}
+	}
+	button {
+		padding: 8px 15px;
+		border: 0px;
+		border-radius: 4px;
+		font-size: 13px;
+		font-weight: 700;
+		font-family: "Quicksand";
+		color: #fff;
+		background: #7055c1;
+		cursor: pointer;
+		@include smoth(0.5s);
+		&:hover {
+			background: #957ddc;
+		}
+	}
+	.error-indicator {
+		display: block;
+		padding: 10px 0px 0px 34px;
+		text-align: left;
+		font-size: 13px;
+		font-weight: 700;
+		color: #da3400;
+	}
+}
+
+/*STAFF LIST*/
+
+.staff-list-member {
+	padding: 0px 50px;
+	overflow: hidden;
+	min-height: 70px;
+	margin-top: -1px;
+	&:hover {
+		background: rgba(255, 255, 255, 0.4);
+	}
+	border-bottom: 1px solid #d7cef3;
+	.member-info {
+		padding: 23px 0px;
+		width: 80%;
+		float:left;
+		.member-name {
+			font-size: 18px;
+			font-weight: 700;
+		}
+		.member-role {
+			font-size: 13px;
+			letter-spacing: 1px;
+		}
+	}
+	.member-actions {
+		width: 20%;
+		float:left;
+		font-size: 12px;
+		font-weight: 700;
+		text-align: right;
+		padding: 10px 0px;
+		.member-action {
+			display: inline-block;
+			margin: 20px 0px;
+			padding: 5px 10px;
+			cursor: pointer;
+			border-radius: 3px;
+			background: rgba(112, 85, 193, 0.25);
+			color: #fff;
+			@include smoth(0.5s);
+			&:hover {
+				background: rgba(112, 85, 193, 0.5);
+			}
+		}
+	}
+}
+
+/*PASSWORD FORM*/
+
+.password-form {
+	padding: 30px 20px 30px;
+	background: #ebe5ff;
+	text-align: center;
+	form {
+		width: 455px;
+		margin: auto;
+	}
+	label {
+		display: inline-block;
+		margin-right: 20px;
+		span {
+			display: block;
+			padding-bottom: 3px;
+			width: 226px;
+			text-align: left;
+			font-size: 13px;
+			font-weight: 700;
+			color: #7055c1;
+		}
+		input {
+			display: block;
+			padding: 10px 15px;
+			width: 100%;
+			border: 0;
+			border-radius: 4px;
+			color: #7b7b7b;
+		}
+	}
+	button {
+		padding: 8px 15px;
+		border: 0px;
+		border-radius: 4px;
+		font-size: 13px;
+		font-weight: 700;
+		font-family: "Quicksand";
+		color: #fff;
+		background: #7055c1;
+		cursor: pointer;
+		@include smoth(0.5s);
+		&:hover {
+			background: #957ddc;
+		}
+	}
+	.error-indicator {
+		display: block;
+		padding: 10px 0px 0px 34px;
+		text-align: left;
+		font-size: 13px;
+		font-weight: 700;
+		color: #da3400;
+	}
+}
