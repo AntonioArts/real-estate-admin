@@ -29,20 +29,47 @@ ul {
 #root {
   height: 100%; }
 
-.page-background {
-  padding: 0px;
-  width: 100%;
-  height: 100%;
-  background: #efefef; }
-
 .app-container {
   height: 100%;
   position: relative; }
 
 .admin-dashboard {
+  position: relative;
   min-height: 100%;
   margin: 0px auto;
-  background: #fff; }
+  background: #eee; }
+
+.notifications {
+  position: absolute;
+  right: 20px;
+  bottom: 20px; }
+  .notifications .notification-item, .notifications .notification-item-success, .notifications .notification-item-error {
+    padding: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    overflow: hidden;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 500; }
+    .notifications .notification-item .notification-item-close, .notifications .notification-item-success .notification-item-close, .notifications .notification-item-error .notification-item-close {
+      display: inline-block;
+      margin: 4px 0px 3px 0px;
+      float: right;
+      font-size: 16px;
+      color: #c7c7c7;
+      cursor: pointer; }
+      .notifications .notification-item .notification-item-close:hover, .notifications .notification-item-success .notification-item-close:hover, .notifications .notification-item-error .notification-item-close:hover {
+        color: #adadad; }
+    .notifications .notification-item .notification-item-message, .notifications .notification-item-success .notification-item-message, .notifications .notification-item-error .notification-item-message {
+      display: inline-block;
+      margin-right: 20px;
+      color: #7055c1; }
+  .notifications .notification-item-success .notification-item-message {
+    color: #55c186; }
+  .notifications .notification-item-error .notification-item-message {
+    color: #c15555; }
 
 /*DASHBOARD SIDEBAR*/
 .sidebar-wrapper {
@@ -116,111 +143,16 @@ ul {
       .sidebar-wrapper .sidebar .user-info .logout {
         color: #fff;
         font-size: 12px;
-        text-decoration: none; }
+        text-decoration: none;
+        cursor: pointer; }
         .sidebar-wrapper .sidebar .user-info .logout:hover {
           color: #000; }
 
 /*DASHBOARD CONTENT*/
 .bashboard-content {
   margin: 0px 0px 0px 260px;
+  padding: 20px;
   position: relative; }
-
-/*STAFF SECTION*/
-.staff {
-  margin: 0px auto; }
-
-/*ADD STAFF FORM*/
-.add-member-form {
-  padding: 30px 20px 30px;
-  background: #ebe5ff;
-  text-align: center; }
-  .add-member-form form {
-    width: 660px;
-    margin: auto; }
-  .add-member-form label {
-    display: inline-block;
-    margin-right: 20px; }
-    .add-member-form label span {
-      display: block;
-      padding-bottom: 3px;
-      width: 226px;
-      text-align: left;
-      font-size: 13px;
-      font-weight: 700;
-      color: #7055c1; }
-    .add-member-form label input {
-      display: block;
-      padding: 10px 15px;
-      width: 100%;
-      border: 0;
-      border-radius: 4px;
-      color: #7b7b7b; }
-  .add-member-form button {
-    padding: 8px 15px;
-    border: 0px;
-    border-radius: 4px;
-    font-size: 13px;
-    font-weight: 700;
-    font-family: "Quicksand";
-    color: #fff;
-    background: #7055c1;
-    cursor: pointer;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -ms-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out; }
-    .add-member-form button:hover {
-      background: #957ddc; }
-  .add-member-form .error-indicator {
-    display: block;
-    padding: 10px 0px 0px 34px;
-    text-align: left;
-    font-size: 13px;
-    font-weight: 700;
-    color: #da3400; }
-
-/*STAFF LIST*/
-.staff-list-member {
-  padding: 0px 50px;
-  overflow: hidden;
-  min-height: 70px;
-  margin-top: -1px;
-  border-bottom: 1px solid #d7cef3; }
-  .staff-list-member:hover {
-    background: rgba(255, 255, 255, 0.4); }
-  .staff-list-member .member-info {
-    padding: 23px 0px;
-    width: 80%;
-    float: left; }
-    .staff-list-member .member-info .member-name {
-      font-size: 18px;
-      font-weight: 700; }
-    .staff-list-member .member-info .member-role {
-      font-size: 13px;
-      letter-spacing: 1px; }
-  .staff-list-member .member-actions {
-    width: 20%;
-    float: left;
-    font-size: 12px;
-    font-weight: 700;
-    text-align: right;
-    padding: 10px 0px; }
-    .staff-list-member .member-actions .member-action {
-      display: inline-block;
-      margin: 20px 0px;
-      padding: 5px 10px;
-      cursor: pointer;
-      border-radius: 3px;
-      background: rgba(112, 85, 193, 0.25);
-      color: #fff;
-      -webkit-transition: all 0.5s ease-out;
-      -moz-transition: all 0.5s ease-out;
-      -ms-transition: all 0.5s ease-out;
-      -o-transition: all 0.5s ease-out;
-      transition: all 0.5s ease-out; }
-      .staff-list-member .member-actions .member-action:hover {
-        background: rgba(112, 85, 193, 0.5); }
 
 /*PASSWORD FORM*/
 .password-form {
@@ -272,6 +204,115 @@ ul {
     font-size: 13px;
     font-weight: 700;
     color: #da3400; }
+
+/*STAFF SECTION*/
+.staff {
+  margin: 20px;
+  background: #fff;
+  padding: 20px;
+  overflow: hidden; }
+
+/*ADD STAFF FORM*/
+.add-member-form {
+  float: left;
+  width: 30%;
+  padding: 30px 20px 30px;
+  text-align: center; }
+  .add-member-form form {
+    margin: auto;
+    width: 60%; }
+  .add-member-form label {
+    display: inline-block;
+    margin: 0px 0px 10px 0px;
+    width: 100%; }
+    .add-member-form label span {
+      display: block;
+      padding: 0px 0px 4px 10px;
+      width: 100%;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 700;
+      color: #7055c1; }
+    .add-member-form label input {
+      display: block;
+      padding: 10px 15px;
+      width: 100%;
+      outline: none;
+      border: 2px solid #e0d6fd;
+      border-radius: 30px; }
+      .add-member-form label input:focus {
+        border: 2px solid #7055c1; }
+  .add-member-form button {
+    display: block;
+    padding: 8px 15px;
+    margin: 10px auto;
+    border: 0px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: "Quicksand";
+    color: #fff;
+    background: #7055c1;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
+    .add-member-form button:hover {
+      background: #957ddc; }
+  .add-member-form .error-indicator {
+    display: block;
+    margin: 10px 0px 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #da3400; }
+
+/*STAFF LIST*/
+.staff-list {
+  float: left;
+  width: 70%;
+  padding: 0% 5% 0% 0%; }
+
+.staff-list-member {
+  padding: 0px;
+  overflow: hidden;
+  min-height: 70px;
+  margin-top: -1px;
+  border-bottom: 1px dotted #d7cef3; }
+  .staff-list-member .member-info {
+    padding: 23px 0px;
+    width: 80%;
+    float: left; }
+    .staff-list-member .member-info .member-name {
+      font-size: 18px;
+      font-weight: 700; }
+    .staff-list-member .member-info .member-role {
+      font-size: 13px;
+      letter-spacing: 1px; }
+  .staff-list-member .member-actions {
+    width: 20%;
+    float: left;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: right;
+    padding: 10px 0px; }
+    .staff-list-member .member-actions .member-action {
+      display: inline-block;
+      margin: 20px 0px;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 3px;
+      background: rgba(112, 85, 193, 0.25);
+      color: #fff;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
+      .staff-list-member .member-actions .member-action:hover {
+        background: rgba(112, 85, 193, 0.5); }
 
 .login-form-container {
   height: 100%;

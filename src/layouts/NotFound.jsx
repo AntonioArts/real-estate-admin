@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
 
- export default class Layout extends React.Component {
+ export default class NotFoundLayout extends React.Component {
 	render() {
 		return (
 			<div>

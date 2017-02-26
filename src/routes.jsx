@@ -10,18 +10,41 @@ import Staff from './pages/Staff';
 import Password from './pages/Password';
 import NotFound from './pages/NotFound';
 
-export default (
-	<Route path="/">
-		<Route component={LoginLayout}>
-			<Route path="/login"/>
+export const getRoutes = (store) => {
+	const { userAuth } = store.getState();
+	const isLogged = userAuth.isLogged;
+
+	const requireAuth = (nextState, replace) => {
+		console.log(1, isLogged);
+		if (!isLogged) {
+			replace({
+				state: { nextPathname: nextState.location.pathname },
+				pathname: '/login'
+			})
+		}
+	}
+
+	const isUserLogged = (nextState, replace) => {
+		console.log(2, isLogged);
+		if (isLogged) {
+			replace({
+				state: { nextPathname: nextState.location.pathname },
+				pathname: '/'
+			})
+		}
+	}
+
+	return (
+		<Route path="/">
+			<Route path="/login" component={LoginLayout} onEnter={isUserLogged.bind(this)}/>
+			<Route component={AdminLayout} onEnter={requireAuth.bind(this)}>
+				<IndexRoute component={Properties}/>
+				<Route path="/agenda" component={Agenda}/>
+				<Route path="/inquires" component={Inquires}/>
+				{ userAuth.user.role == 'admin' && <Route path="/staff" component={Staff}/> }
+				<Route path="/password" component={Password}/>
+			</Route>
+			<Route path="*" component={NotFoundLayout}/>
 		</Route>
-		<Route component={AdminLayout}>
-			<IndexRoute component={Properties}/>
-			<Route path="/agenda" component={Agenda}/>
-			<Route path="/inquires" component={Inquires}/>
-			<Route path="/staff" component={Staff}/>
-			<Route path="/password" component={Password}/>
-		</Route>
-		<Route path="*" component={NotFoundLayout}/>
-	</Route>
-);
+	);
+}

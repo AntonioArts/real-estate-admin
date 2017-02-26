@@ -1,7 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	entry: './src/App.jsx',
+	entry: './src/index.js',
 
 	output: {
 		path: './public',
@@ -22,25 +22,29 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'react-hot-loader!babel-loader'
 			},
+			// {
+			// 	test: /\.scss$/,
+			// 	loader: 'style!css!sass'
+			// },
 			{
 				test: /\.scss$/,
-				loader: 'style!css!sass'
+				loader: ExtractTextPlugin.extract("style", "css!sass")
 			}
 		]
 	},
 
-	// Preproduction style bundle
-	// {
-	//		test: /\.scss$/,
-	// 	loader: ExtractTextPlugin.extract("style", "css!sass")
-	// }
-	// plugins: [
-	// 	new ExtractTextPlugin("styles.css")
-	// ],
+	plugins: [
+		new ExtractTextPlugin("styles.css")
+	],
 
 	devtool: 'eval-source-map',
 
 	resolve: {
 		extensions: ['', '.js', '.jsx']
+	},
+
+	node: {
+		net: 'empty',
+		dns: 'empty'
 	}
 }

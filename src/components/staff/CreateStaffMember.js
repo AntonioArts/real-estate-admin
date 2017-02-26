@@ -18,10 +18,7 @@ export default class CreateStaffMember extends React.Component {
 	}
 
 	handleInputChange(event) {
-		const target = event.target;
-		const value = target.value;
-		const name = target.name;
-		this.setState({[name]: value});
+		this.setState({[event.target.name]: event.target.value});
 	}
 
 	handleSubmit(event) {
@@ -41,7 +38,7 @@ export default class CreateStaffMember extends React.Component {
 				console.log(error);
 			});
 		} else {
-			this.setState({validate: 'Email and Password are reuired'});
+			this.setState({validate: 'Name and Email are required'});
 		}
 	}
 
@@ -83,9 +80,9 @@ export default class CreateStaffMember extends React.Component {
 					value={this.state.email}
 					onChange={this.handleInputChange} />
 					</label>
-					<button type="submit">Add Manager</button>
 					{ this.state.validate ? <div className="error-indicator">{this.state.validate}</div> : '' }
 					{ this.state.error ? <div className="error-indicator">{this.state.error}</div> : '' }
+					<button type="submit">Add Manager</button>
 				</form>
 			</div>
 		)
