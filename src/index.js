@@ -10,7 +10,7 @@ import rootReducer from './reducers/rootReducer';
 
 //Auth
 import setAuthorizationToken from './utils/setAuthorizationToken';
-import { setCurrentUser } from './actions/loginActions';
+import { setCurrentUser } from './actions/userAuth';
 import jwt from 'jsonwebtoken';
 
 const store = createStore(

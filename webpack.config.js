@@ -22,20 +22,12 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'react-hot-loader!babel-loader'
 			},
-			// {
-			// 	test: /\.scss$/,
-			// 	loader: 'style!css!sass'
-			// },
 			{
 				test: /\.scss$/,
-				loader: ExtractTextPlugin.extract("style", "css!sass")
+				loader: 'style!css!sass'
 			}
 		]
 	},
-
-	plugins: [
-		new ExtractTextPlugin("styles.css")
-	],
 
 	devtool: 'eval-source-map',
 

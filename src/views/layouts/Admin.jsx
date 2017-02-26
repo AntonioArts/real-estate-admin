@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Link, IndexLink } from 'react-router';
 import NotificationsList from '../components/notification/NotificationsList';
-import { unsetCurrentUser } from '../actions/loginActions';
+import { unsetCurrentUser } from '../../actions/userAuth';
 import { connect } from 'react-redux';
 
 class AdminLayout extends React.Component {

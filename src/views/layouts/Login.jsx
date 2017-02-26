@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import LoginForm from '../components/login/LoginForm';
 import { connect } from 'react-redux';
-import { userLoginRequest } from '../actions/loginActions';
-import { createFlashMessage } from '../actions/flashMessages';
+import { userLoginRequest } from '../../actions/userAuth';
+import { createFlashMessage } from '../../actions/flashMessages';
 
 class LoginLayout extends React.Component {
 	render() {

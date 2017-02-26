@@ -1,5 +1,5 @@
-import { SET_CURRENT_USER } from '../actions/loginActions';
-import { UNSET_CURRENT_USER } from '../actions/loginActions';
+import { SET_CURRENT_USER } from '../actions/userAuth';
+import { UNSET_CURRENT_USER } from '../actions/userAuth';
 
 export default (state = {isLogged: false, user: {}}, action = {}) => {
 	switch(action.type) {

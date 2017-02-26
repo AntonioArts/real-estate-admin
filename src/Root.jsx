@@ -4,15 +4,15 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 //Views
-import LoginLayout from './layouts/Login';
-import AdminLayout from './layouts/Admin';
-import NotFoundLayout from './layouts/NotFound';
-import Properties from './pages/Properties';
-import Agenda from './pages/Agenda';
-import Inquires from './pages/Inquires';
-import Staff from './pages/Staff';
-import Password from './pages/Password';
-import NotFound from './pages/NotFound';
+import LoginLayout from './views/layouts/Login';
+import AdminLayout from './views/layouts/Admin';
+import NotFoundLayout from './views/layouts/NotFound';
+import Properties from './views/pages/Properties';
+import Agenda from './views/pages/Agenda';
+import Inquires from './views/pages/Inquires';
+import Staff from './views/pages/Staff';
+import Password from './views/pages/Password';
+import NotFound from './views/pages/NotFound';
 
 //Styles
 import './styles/styles.scss';
