@@ -2,4 +2,9 @@
 
 Modern real estate admin dashboard for managing properties, staff members, clients inquiries and tasks
 
-Added a few lines more
+Currently app working only with my local API server.
+In near future I'll add remote server for exploring platform.
+
+Click "Watch" to get lates updates.
+
+Cheers!
