@@ -1,7 +1,16 @@
+.login-page-background {
+	height: 100%;
+	background-image: url('/static/images/logn-background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 .login-form-container {
 	height: 100%;
 	display: flex;
 	justify-content: center;
+	background: rgba(112, 85, 193, 0.64);
 }
 
 .login-form-centered {
@@ -9,16 +18,22 @@
 	text-align: center;
 }
 
+.form-header {
+	font-size: 36px;
+	font-weight: 300;
+	letter-spacing: 3px;
+	color: #fff;
+}
+
 /*LOGIN FORM*/
 
 .login-form {
-	border: 1px solid #eee8ff;
 	border-radius: 4px;
 	padding: 50px 70px;
+	background: rgba(255, 255, 255, 0.4);
 	@include smoth(0.5s);
 	&:hover {
-		border: 1px solid #e0d6fd;
-		background: #f7f7f7;
+		background: rgba(255, 255, 255, 1);
 		padding: 80px 100px;
 	}
 	label {
@@ -28,7 +43,7 @@
 			display: block;
 			padding-bottom: 5px;
 			text-align: left;
-			color: #ababab;
+			color: #7055c1;
 			font-size: 14px;
 			font-weight: 700;
 		}

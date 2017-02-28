@@ -8,12 +8,15 @@ class LoginLayout extends React.Component {
 	render() {
 		const { userLoginRequest, createFlashMessage } = this.props;
 		return (
-			<div className="login-form-container">
-				<div className="login-form-centered">
-					<LoginForm
-						userLoginRequest={userLoginRequest}
-						createFlashMessage={createFlashMessage}
-					/>
+			<div className="login-page-background">
+				<div className="login-form-container">
+					<div className="login-form-centered">
+						<h1 className="form-header">Real Estate Admin</h1>
+						<LoginForm
+							userLoginRequest={userLoginRequest}
+							createFlashMessage={createFlashMessage}
+						/>
+					</div>
 				</div>
 			</div>
 		)

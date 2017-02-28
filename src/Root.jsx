@@ -50,7 +50,7 @@ export const Root = ({store}) => {
 						<IndexRoute component={Properties}/>
 						<Route path="/agenda" component={Agenda}/>
 						<Route path="/inquires" component={Inquires}/>
-						{ userAuth.user.role == 'admin' && <Route path="/staff" component={Staff}/> }
+						{ userAuth.user.role === 'admin' && <Route path="/staff" component={Staff}/> }
 						<Route path="/password" component={Password}/>
 					</Route>
 					<Route path="*" component={NotFoundLayout}/>
