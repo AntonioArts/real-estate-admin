@@ -14,6 +14,9 @@ import Staff from './views/pages/Staff';
 import Password from './views/pages/Password';
 import NotFound from './views/pages/NotFound';
 
+//Styles
+import './styles/styles.scss';
+
 export const Root = ({store}) => {
 	const requireAuth = (nextState, replace) => {
 		let currentState = store.getState();
