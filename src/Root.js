@@ -40,7 +40,17 @@ export const Root = ({store}) => {
 		}
 	}
 
-	const { userAuth } = store.getState();
+	const adminOnly = (nextState, replace) => {
+		let currentState = store.getState();
+		let user = currentState.userAuth.user;
+		if (user.role !== 'admin') {
+			replace({
+				state: { nextPathname: nextState.location.pathname },
+				pathname: '/noaccess'
+			})
+		}
+	}
+
 	return (
 		<Provider store={store}>
 			<Router history={browserHistory}>
@@ -50,7 +60,7 @@ export const Root = ({store}) => {
 						<IndexRoute component={Properties}/>
 						<Route path="/agenda" component={Agenda}/>
 						<Route path="/inquires" component={Inquires}/>
-						{ userAuth.user.role === 'admin' && <Route path="/staff" component={Staff}/> }
+						<Route path="/staff" component={Staff} onEnter={adminOnly}/>
 						<Route path="/password" component={Password}/>
 					</Route>
 					<Route path="*" component={NotFoundLayout}/>

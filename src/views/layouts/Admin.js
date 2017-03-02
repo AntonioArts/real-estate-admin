@@ -14,10 +14,10 @@ class AdminLayout extends React.Component {
 					<div className="sidebar">
 						<div className="sidebar-header">Kievstones</div>
 						<ul className="sidebar-menu">
-							<li><IndexLink to="/" activeClassName="active"><i className="fa fa-building-o"></i> Properties</IndexLink></li>
-							<li><Link to="/agenda" activeClassName="active"><i className="fa fa-tasks"></i> Agenda</Link></li>
-							<li><Link to="/inquires" activeClassName="active"><i className="fa fa-envelope-o"></i> Inquires</Link></li>
-							{ role == 'admin' ? <li><Link to="/staff" activeClassName="active"><i className="fa fa-users"></i> Staff</Link></li> : '' }
+							<li><IndexLink to="/" activeClassName="active"><span className="lnr lnr-apartment"></span> Properties</IndexLink></li>
+							<li><Link to="/agenda" activeClassName="active"><span className="lnr lnr-calendar-full"></span> Agenda</Link></li>
+							<li><Link to="/inquires" activeClassName="active"><span className="lnr lnr-download"></span> Inquires</Link></li>
+							{ role == 'admin' ? <li><Link to="/staff" activeClassName="active"><span className="lnr lnr-users"></span> Staff</Link></li> : '' }
 						</ul>
 						<div className="user-info">
 							<div className="user-info-wrapper">
