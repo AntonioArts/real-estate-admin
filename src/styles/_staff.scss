@@ -9,73 +9,22 @@
 
 /*ADD STAFF FORM*/
 
-.add-member-form {
+.add-member-container {
 	float: left;
-	width: 30%;
-	padding: 30px 20px 30px;
+	width: 400px;
+	padding: 30px 60px 30px;
 	text-align: center;
-	form {
+	.add-member-form {
 		margin: auto;
-		width: 60%;
-	}
-	label {
-		display: inline-block;
-		margin: 0px 0px 10px 0px;
 		width: 100%;
-		span {
-			display: block;
-			padding: 0px 0px 4px 10px;
-			width: 100%;
-			text-align: left;
-			font-size: 13px;
-			font-weight: 700;
-			color: #7055c1;
-		}
-		input {
-			display: block;
-			padding: 10px 15px;
-			width: 100%;
-			outline: none;
-			border: 2px solid #e0d6fd;
-			border-radius: 30px;
-			&:focus {
-				border: 2px solid #7055c1;
-			}
-		}
-	}
-	button {
-		display: block;
-		padding: 8px 15px;
-		margin: 10px auto;
-		border: 0px;
-		border-radius: 4px;
-		font-size: 13px;
-		font-weight: 700;
-		font-family: "Quicksand";
-		color: #fff;
-		background: #7055c1;
-		cursor: pointer;
-		@include smoth(0.5s);
-		&:hover {
-			background: #957ddc;
-		}
-	}
-	.error-indicator {
-		display: block;
-		margin: 10px 0px 20px;
-		text-align: center;
-		font-size: 13px;
-		font-weight: 700;
-		color: #da3400;
 	}
 }
 
 /*STAFF LIST*/
 
 .staff-list {
-	float: left;
-	width: 70%;
-	padding: 0% 5% 0% 0%;
+	width: auto;
+	margin-left: 420px;
 }
 
 .staff-list-member {
@@ -84,10 +33,17 @@
 	min-height: 70px;
 	margin-top: -1px;
 	border-bottom: 1px dotted #d7cef3;
+	.member-avatar {
+		width: 64px;
+		height: 64px;
+		margin: 7px;
+		float: left;
+		border-radius: 100%;
+		box-shadow: 0px 0px 9px -2px rgba(0,0,0,0.75);
+	}
 	.member-info {
-		padding: 23px 0px;
-		width: 80%;
-		float:left;
+		margin-left: 100px;
+		padding: 20px 0px;
 		.member-name {
 			font-size: 18px;
 			font-weight: 700;
@@ -98,15 +54,14 @@
 		}
 	}
 	.member-actions {
-		width: 20%;
-		float:left;
+		float: right;
 		font-size: 12px;
 		font-weight: 700;
 		text-align: right;
-		padding: 10px 0px;
+		padding: 20px 0px;
 		.member-action {
 			display: inline-block;
-			margin: 20px 0px;
+			margin: 7px 0px 7px 10px;
 			padding: 5px 10px;
 			cursor: pointer;
 			border-radius: 3px;

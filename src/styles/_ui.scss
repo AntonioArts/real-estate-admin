@@ -1,0 +1,41 @@
+.loading-indicator {
+	text-align: center;
+	img {
+		display: inline-block;
+		width: 150px;
+	}
+	.loading {
+		font-size: 18px;
+		font-weight: 400;
+		letter-spacing: 3px;
+		color: #6755a0;
+	}
+}
+
+.update-content-button {
+	display: block;
+	padding: 10px 20px;
+	text-align: center;
+	img {
+		display: inline-block;
+		width: 33px;
+		height: 33px;
+		opacity: 0.5;
+		cursor: pointer;
+		&:hover {
+			animation:spin 2s linear infinite;
+		}
+		@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+		@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+		@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+	}
+}
+
+.loading-error {
+	padding: 30px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	color: #ff5e00;
+}

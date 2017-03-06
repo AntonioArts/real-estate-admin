@@ -1,20 +1,30 @@
 import React from 'react';
+import { TextInput } from '../form/TextInput';
+import { AvatarInput } from '../form/AvatarInput';
+
 import axios from 'axios';
-import querystring from "querystring";
+import qs from 'qs';
 
 export default class CreateStaffMember extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			email: '',
+			avatar: '/static/images/user/default.png',
 			name: '',
+			email: '',
+			phone: '',
 			validate: '',
 			error: ''
 		};
 
+		this.handleAvatarChange = this.handleAvatarChange.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleAvatarChange(src) {
+		this.setState({avatar: src});
 	}
 
 	handleInputChange(event) {
@@ -25,18 +35,7 @@ export default class CreateStaffMember extends React.Component {
 		event.preventDefault();
 
 		if(this.state.email !== "" && this.state.name !== "") {
-			const self = this;
-			const data = querystring.stringify({
-				email: this.state.email,
-				name: this.state.name
-			});
-			axios.post('http://immoicc.local/user/create', data, 'headers': {"Content-Type": "application/x-www-form-urlencoded"})
-			.then(function (response) {
-				self.handleResponse(response.data);
-			})
-			.catch(function (error) {
-				console.log(error);
-			});
+			this.props.createMember({id: 8, avatar: this.state.avatar, name: this.state.name, email: this.state.email, phone: this.state.phone });
 		} else {
 			this.setState({validate: 'Name and Email are required'});
 		}
@@ -62,24 +61,33 @@ export default class CreateStaffMember extends React.Component {
 
 	render() {
 		return (
-			<div className="add-member-form">
-				<form onSubmit={this.handleSubmit} autoComplete="off">
-					<label>
-					<span>Name:</span>
-					<input
-					name="name"
-					type="text"
-					value={this.state.name}
-					onChange={this.handleInputChange} />
-					</label>
-					<label>
-					<span>Email:</span>
-					<input
-					name="email"
-					type="text"
-					value={this.state.email}
-					onChange={this.handleInputChange} />
-					</label>
+			<div className="add-member-container">
+				<form className="add-member-form" onSubmit={this.handleSubmit} autoComplete="off">
+					<AvatarInput
+						avatar={ this.state.avatar }
+						handleAvatarChange={ this.handleAvatarChange }
+					/>
+					<TextInput
+						label="Name"
+						name="name"
+						type="text"
+						value={this.state.name}
+						handleInputChange={ this.handleInputChange }
+					/>
+					<TextInput
+						label="E-mail"
+						name="email"
+						type="text"
+						value={this.state.email}
+						handleInputChange={ this.handleInputChange }
+					/>
+					<TextInput
+						label="Phone"
+						name="phone"
+						type="text"
+						value={this.state.phone}
+						handleInputChange={ this.handleInputChange }
+					/>
 					{ this.state.validate ? <div className="error-indicator">{this.state.validate}</div> : '' }
 					{ this.state.error ? <div className="error-indicator">{this.state.error}</div> : '' }
 					<button type="submit">Add Manager</button>

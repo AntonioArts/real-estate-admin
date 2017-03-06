@@ -3,19 +3,52 @@ import React from 'react';
 export default class StaffListMember extends React.Component {
 	constructor(props) {
 		super(props);
+
+		this.state = {isEditing: false}
+	}
+
+	changeRenderCondition() {
+		this.setState(prevState => ({
+		  isEditing: !prevState.isEditing
+		}));
+	}
+
+	renderCondition() {
+		if(this.state.isEditing === false) {
+			return (
+				<div>
+					<div className="member-actions">
+						<span className="member-action" onClick={this.changeRenderCondition.bind(this)}>Edit</span>
+						<span className="member-action" onClick={this.props.deleteMember.bind(this, this.props.id)}>Delete</span>
+					</div>
+					<img className="member-avatar" src={this.props.avatar}/>
+					<div className="member-info">
+						<div className="member-name">{this.props.name}</div>
+						<div className="member-role">{this.props.role} / {this.props.email}</div>
+					</div>
+				</div>
+			);
+		}
+
+		return (
+			<div>
+				<div className="member-actions">
+					<span className="member-action">Save</span>
+					<span className="member-action" onClick={this.changeRenderCondition.bind(this)}>Cancel</span>
+				</div>
+				<img className="member-avatar" src={this.props.avatar}/>
+				<div className="member-info">
+					<div className="member-name">{this.props.name}</div>
+					<div className="member-role">{this.props.role} / {this.props.email}</div>
+				</div>
+			</div>
+		);
 	}
 
 	render() {
-		const {id, name, role, email, deleteMember} = this.props;
 		return (
 			<div className="staff-list-member">
-				<div className="member-info">
-					<div className="member-name">{name}</div>
-					<div className="member-role">{role} / {email}</div>
-				</div>
-				<div className="member-actions">
-					<span className="member-action" onClick={deleteMember.bind(this, id)}>Delete</span>
-				</div>
+				{ this.renderCondition() }
 			</div>
 		);
 	}

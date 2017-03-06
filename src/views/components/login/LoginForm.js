@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { browserHistory } from 'react-router';
+import { TextInput } from '../form/TextInput';
 
 export default class LoginForm extends React.Component {
 	constructor(props) {
@@ -20,6 +20,7 @@ export default class LoginForm extends React.Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
+
 		if(this.state.email !== "" && this.state.password !== "") {
 			this.props.userLoginRequest(this.state).then(
 				( data ) => {
@@ -54,22 +55,20 @@ export default class LoginForm extends React.Component {
 	render() {
 		return (
 			<form className="login-form" onSubmit={this.handleSubmit} autoComplete="off">
-				<label>
-				<span>Email:</span>
-				<input
-				name="email"
-				type="text"
-				value={this.state.email}
-				onChange={this.handleInputChange} />
-				</label>
-				<label>
-				<span>Password:</span>
-				<input
-				name="password"
-				type="password"
-				value={this.state.pasword}
-				onChange={this.handleInputChange} />
-				</label>
+				<TextInput
+					label="Email"
+					name="email"
+					type="text"
+					value={this.state.email}
+					handleInputChange={this.handleInputChange}
+				/>
+				<TextInput
+					label="Password"
+					name="password"
+					type="password"
+					value={this.state.password}
+					handleInputChange={this.handleInputChange}
+				/>
 				{ this.state.validate && <div className="error-indicator">{this.state.validate}</div> }
 				{ this.state.error && <div className="error-indicator">{this.state.error}</div> }
 				<button type="submit">Log In</button>

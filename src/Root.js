@@ -11,7 +11,7 @@ import Properties from './views/pages/Properties';
 import Agenda from './views/pages/Agenda';
 import Inquires from './views/pages/Inquires';
 import Staff from './views/pages/Staff';
-import Password from './views/pages/Password';
+import Settings from './views/pages/Settings';
 import NotFound from './views/pages/NotFound';
 
 //Styles
@@ -61,7 +61,7 @@ export const Root = ({store}) => {
 						<Route path="/agenda" component={Agenda}/>
 						<Route path="/inquires" component={Inquires}/>
 						<Route path="/staff" component={Staff} onEnter={adminOnly}/>
-						<Route path="/password" component={Password}/>
+						<Route path="/settings" component={Settings}/>
 					</Route>
 					<Route path="*" component={NotFoundLayout}/>
 				</Route>

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 class AdminLayout extends React.Component {
 	render() {
-		const { name, role } = this.props.user;
+		const { avatar, name, role } = this.props.user;
 		return (
 		<div className="admin-dashboard">
 			<div className="add-container">
@@ -20,9 +20,10 @@ class AdminLayout extends React.Component {
 							{ role == 'admin' ? <li><Link to="/staff" activeClassName="active"><span className="lnr lnr-users"></span> Staff</Link></li> : '' }
 						</ul>
 						<div className="user-info">
+							<img className="user-avatar" src={avatar}/>
 							<div className="user-info-wrapper">
 								<span className="user-name">{name}&nbsp;
-									<Link to="/password" activeClassName="active"><i className="fa fa-cog"></i></Link>
+									<Link to="/settings" activeClassName="active"><i className="fa fa-cog"></i></Link>
 								</span>
 								<span className="user-role">({role})&nbsp;</span>
 								<span className="logout" onClick={this.props.unsetCurrentUser}>Logout&nbsp;<i className="fa fa-sign-out"></i></span>
@@ -40,7 +41,7 @@ class AdminLayout extends React.Component {
 	}
 };
 
-NotificationsList.propType = {
+AdminLayout.propType = {
 	user: PropTypes.object.isRequired,
 	unsetCurrentUser: PropTypes.func.isRequired
 }

@@ -58,7 +58,7 @@
 /*DASHBOARD SIDEBAR*/
 
 .sidebar-wrapper {
-	width: 260px;
+	width: 280px;
 	left: 0px;
 	height: 100%;
 	position: fixed;
@@ -75,10 +75,10 @@
 		padding: 10px;
 		z-index: 1;
 		background: #7055c1;
-		background: -webkit-linear-gradient(right, rgba(112, 85, 193, 1), rgba(112, 85, 193, 0.7));
-		background: -o-linear-gradient(top, rgba(112, 85, 193, 1), rgba(112, 85, 193, 0.7));
-		background: -moz-linear-gradient(top, rgba(112, 85, 193, 1), rgba(112, 85, 193, 0.7));
-		background: linear-gradient(to bottom, rgba(112, 85, 193, 1), rgba(112, 85, 193, 0.7));
+		background: -webkit-linear-gradient(right, rgba(112, 85, 193, 1), rgba(49, 49, 49, 0.7));
+		background: -o-linear-gradient(top, rgba(112, 85, 193, 1), rgba(49, 49, 49, 0.7));
+		background: -moz-linear-gradient(top, rgba(112, 85, 193, 1), rgba(49, 49, 49, 0.7));
+		background: linear-gradient(to bottom, rgba(112, 85, 193, 1), rgba(49, 49, 49, 0.7));
 		.sidebar-header {
 			padding: 40px 20px 40px;
 			text-align: center;
@@ -114,11 +114,19 @@
 		.user-info {
 			position: absolute;
 			bottom: 0px;
-			padding: 17px 25px 21px;
+			padding: 17px 15px 21px;
 			color: #fff;
 			letter-spacing: 1px;
+			.user-avatar {
+				float: left;
+				width: 40px;
+				height: 40px;
+				border-radius: 100%;
+				border: 2px solid #fff;
+			}
 			.user-info-wrapper {
 				margin-right: 0px;
+				margin-left: 50px;
 				.user-name {
 					display: block;
 					font-size: 15px;
@@ -153,63 +161,7 @@
 /*DASHBOARD CONTENT*/
 
 .bashboard-content {
-	margin: 0px 0px 0px 260px;
+	margin: 0px 0px 0px 280px;
 	padding: 20px;
 	position: relative;
-}
-
-/*PASSWORD FORM*/
-
-.password-form {
-	padding: 30px 20px 30px;
-	background: #ebe5ff;
-	text-align: center;
-	form {
-		width: 455px;
-		margin: auto;
-	}
-	label {
-		display: inline-block;
-		margin-right: 20px;
-		span {
-			display: block;
-			padding-bottom: 3px;
-			width: 226px;
-			text-align: left;
-			font-size: 13px;
-			font-weight: 700;
-			color: #7055c1;
-		}
-		input {
-			display: block;
-			padding: 10px 15px;
-			width: 100%;
-			border: 0;
-			border-radius: 4px;
-			color: #7b7b7b;
-		}
-	}
-	button {
-		padding: 8px 15px;
-		border: 0px;
-		border-radius: 4px;
-		font-size: 13px;
-		font-weight: 700;
-		font-family: "Quicksand";
-		color: #fff;
-		background: #7055c1;
-		cursor: pointer;
-		@include smoth(0.5s);
-		&:hover {
-			background: #957ddc;
-		}
-	}
-	.error-indicator {
-		display: block;
-		padding: 10px 0px 0px 34px;
-		text-align: left;
-		font-size: 13px;
-		font-weight: 700;
-		color: #da3400;
-	}
 }
