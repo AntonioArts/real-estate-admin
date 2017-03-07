@@ -7,7 +7,7 @@ In near future I'll add remote server for exploring platform.
 
 Click "Watch" to get lates updates.
 
-Very first DEMO: http://modultemp.website.tk
+DEMO (auth with JWT and staff list): http://realestate-admin.eu.ai
 
 email: steve@gmail.com
 
