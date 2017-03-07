@@ -1,16 +1,10 @@
-# react-redux-real-estate-admin
+# Real Estate Admin using React & Redux 
 
-Modern real estate admin dashboard for managing properties, staff members, clients inquiries and tasks
+Modern real estate admin dashboard for properties, staff members, clients inquiries and task management
 
-Currently app working only with my local API server.
-In near future I'll add remote server for exploring platform.
+DEMO (auth with JWT and staff list only): http://realestate-admin.eu.ai
 
-Click "Watch" to get lates updates.
-
-DEMO (auth with JWT and staff list): http://realestate-admin.eu.ai
-
-email: steve@gmail.com
-
+email: steve@gmail.com<br/>
 pass: password
 
-Cheers!
+"Watch" to get lates updates.
