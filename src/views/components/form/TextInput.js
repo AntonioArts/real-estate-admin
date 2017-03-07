@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
 
 export const TextInput = (props) => (
-	<label>
+	<label htmlFor={ props.name }>
 		<span>{ props.label }</span>
 		<input
+			id={ props.name }
 			name={ props.name }
 			type={ props.type }
 			value={ props.value }
