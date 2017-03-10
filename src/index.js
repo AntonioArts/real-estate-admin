@@ -1,30 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Root } from './Root';
-
-//Redux
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers/rootReducer';
+import { store } from './state/store';
 
 //Auth
-import setAuthorizationToken from './utils/setAuthorizationToken';
-import { setCurrentUser } from './actions/userAuth';
-import jwt from 'jsonwebtoken';
+import { authUtils } from './state/auth/utils';
 
-const store = createStore(
-	rootReducer,
-	compose(
-		applyMiddleware(thunk),
-		window.devToolsExtension ? window.devToolsExtension() : f => f
-	)
-);
-
-if(localStorage.jwtToken) {
-	setAuthorizationToken(localStorage.jwtToken);
-	store.dispatch(setCurrentUser(jwt.decode(localStorage.jwtToken)));
-};
+//Set user if localStorage JWT exists
+authUtils.setUserSession(store);
 
 ReactDOM.render(
 	<Root store={store}/>,

@@ -3,24 +3,24 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
-//Views
-import LoginLayout from './views/layouts/Login';
-import AdminLayout from './views/layouts/Admin';
-import NotFoundLayout from './views/layouts/NotFound';
-import Properties from './views/pages/Properties';
-import Agenda from './views/pages/Agenda';
-import Inquires from './views/pages/Inquires';
-import Staff from './views/pages/Staff';
-import Settings from './views/pages/Settings';
-import NotFound from './views/pages/NotFound';
+//View->Layouts
+import LoginLayout from './view/login';
+import AdminLayout from './view/admin';
+import NotFoundLayout from './view/not-found';
+//View->Pages
+import Properties from './view/admin/properties';
+import Schedule from './view/admin/schedule';
+import Inquires from './view/admin/inquires';
+import Users from './view/admin/users';
+import Settings from './view/admin/settings';
 
 //Styles
-import './styles/styles.scss';
+import './view/styles/styles.scss';
 
 export const Root = ({store}) => {
 	const requireAuth = (nextState, replace) => {
 		let currentState = store.getState();
-		let isLogged = currentState.userAuth.isLogged;
+		let isLogged = currentState.auth.isLogged;
 		if (!isLogged) {
 			replace({
 				state: { nextPathname: nextState.location.pathname },
@@ -31,7 +31,7 @@ export const Root = ({store}) => {
 
 	const isUserLogged = (nextState, replace) => {
 		let currentState = store.getState();
-		let isLogged = currentState.userAuth.isLogged;
+		let isLogged = currentState.auth.isLogged;
 		if (isLogged) {
 			replace({
 				state: { nextPathname: nextState.location.pathname },
@@ -42,7 +42,7 @@ export const Root = ({store}) => {
 
 	const adminOnly = (nextState, replace) => {
 		let currentState = store.getState();
-		let user = currentState.userAuth.user;
+		let user = currentState.auth.user;
 		if (user.role !== 'admin') {
 			replace({
 				state: { nextPathname: nextState.location.pathname },
@@ -58,9 +58,9 @@ export const Root = ({store}) => {
 					<Route path="/login" component={LoginLayout} onEnter={isUserLogged}/>
 					<Route component={AdminLayout} onEnter={requireAuth}>
 						<IndexRoute component={Properties}/>
-						<Route path="/agenda" component={Agenda}/>
+						<Route path="/schedule" component={Schedule}/>
 						<Route path="/inquires" component={Inquires}/>
-						<Route path="/staff" component={Staff} onEnter={adminOnly}/>
+						<Route path="/users" component={Users} onEnter={adminOnly}/>
 						<Route path="/settings" component={Settings}/>
 					</Route>
 					<Route path="*" component={NotFoundLayout}/>
