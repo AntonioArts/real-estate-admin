@@ -62,7 +62,7 @@ export default class LoginForm extends React.Component {
 					onBlur={ this.handleOnBlur }
 					validation={ validation.password }
 				/>
-				{ this.props.errors ? <div className="error-indicator">{ this.props.errors }</div> : '' }
+				{ this.props.errors && <div className="error-indicator"><span className="lnr lnr-warning"></span> { this.props.errors }</div> }
 				<button type="submit" disabled={this.props.authProcessing}>Log In</button>
 			</form>
 		)

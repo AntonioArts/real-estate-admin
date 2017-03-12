@@ -17,7 +17,7 @@ export const authUtils = {
 		}
 
 		if(name == 'email' && !validator.isEmail(value)) {
-			error = 'Email is invalid format';
+			error = 'Email is invalid';
 		}
 
 		return error;
@@ -31,7 +31,7 @@ export const authUtils = {
 		}
 
 		if(!validator.isEmail(form.email)) {
-			errors.email = 'Email is invalid format';
+			errors.email = 'Email is invalid';
 		}
 
 		if(validator.isEmpty(form.password)) {

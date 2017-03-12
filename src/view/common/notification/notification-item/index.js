@@ -19,7 +19,7 @@ class NotificationsItem extends React.Component {
 				'notification-item-success': type === 'success',
 				'notification-item-error': type === 'error'
 			})}>
-				<span className="notification-item-close fa fa-times" onClick={this.onDeleteClick}></span>
+				<span className="notification-item-close lnr lnr-cross" onClick={this.onDeleteClick}></span>
 				<div className="notification-item-message">{message}</div>
 			</div>
 		)

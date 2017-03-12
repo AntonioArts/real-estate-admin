@@ -14,7 +14,7 @@ export const TextInput = ({label, name, type, value, onChange, onBlur, validatio
 				onBlur={ onBlur }
 			/>
 		</label>
-		{ validation && <span className="field-validation-text">{ validation }</span> }
+		{ validation && <span className="field-validation-text"><span className="lnr lnr-warning"></span> { validation }</span> }
 	</div>
 )
 

@@ -37,7 +37,7 @@ export const authActions = {
 				.catch(error => {
 					dispatch({
 						type: authActions.AUTH_PROCESS_ERROR,
-						error: error.response.data.code.toString()
+						error: error.response ? error.response.data.code.toString() : 'Something went wrong, please try again.'
 					});
 				});
 			}, 1500);

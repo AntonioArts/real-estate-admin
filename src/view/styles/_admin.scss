@@ -1,3 +1,5 @@
+/*ADMIN CONTAINER*/
+
 .app-container {
 	height: 100%;
 	position: relative;
@@ -8,51 +10,7 @@
 	min-height: 100%;
 	margin: 0px auto;
 	background: #eee;
-}
-
-.notifications {
-	position: absolute;
-	right: 20px;
-	bottom: 20px;
-   .notification-item {
-			padding: 20px;
-			margin-top: 10px;
-			overflow: hidden;
-			background: #fff;
-			box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
-			overflow: hidden;
-			border-radius: 6px;
-			font-size: 18px;
-			font-weight: 500;
-   	.notification-item-close {
-			display: inline-block;
-			margin: 4px 0px 3px 0px;
-			float: right;
-			font-size: 16px;
-			color: #c7c7c7;
-			cursor: pointer;
-				&:hover {
-					color: #adadad;
-				}
-	   	}
-   	.notification-item-message {
-			display: inline-block;
-			margin-right: 20px;
-			color: #7055c1;
-   	}
-   }
-   .notification-item-success {
-   	@extend .notification-item;
-   	.notification-item-message {
-   		color: #55c186;
-   	}
-   }
-   .notification-item-error {
-   	@extend .notification-item;
-   	.notification-item-message {
-   		color: #c15555;
-   	}
-   }
+	overflow: hidden;
 }
 
 /*DASHBOARD SIDEBAR*/

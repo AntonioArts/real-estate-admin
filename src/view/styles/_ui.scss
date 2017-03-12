@@ -1,3 +1,56 @@
+/*NOTIFICATIONS*/
+
+.notifications {
+	position: absolute;
+	right: -500px;
+	bottom: 20px;
+	@include smoth(1.5s);
+	.notification-item {
+		padding: 26px;
+		margin-top: 10px;
+		overflow: hidden;
+		background: #fff;
+		box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+		overflow: hidden;
+		border-radius: 6px;
+		.notification-item-close {
+			display: inline-block;
+			margin: 4px 0px 3px 0px;
+			float: right;
+			font-size: 16px;
+			font-weight: 500;
+			color: #fff;
+			cursor: pointer;
+			&:hover {
+				font-weight: 700;
+			}
+		}
+		.notification-item-message {
+			display: inline-block;
+			margin-right: 20px;
+			color: #fff;
+			font-size: 18px;
+			font-weight: 400;
+			letter-spacing: 1px;
+		}
+	}
+	.notification-item-success {
+		@extend .notification-item;
+		background: #55c186;
+	}
+	.notification-item-error {
+		@extend .notification-item;
+		background: #c15555;
+	}
+}
+
+.notifications-active {
+	@extend .notifications;
+	right: 20px;
+}
+
+/*LOADING*/
+
 .loading-indicator {
 	text-align: center;
 	img {
@@ -12,22 +65,23 @@
 	}
 }
 
+/*UPDATE CONTENT ICON*/
+
 .update-content-button {
 	display: block;
-	padding: 10px 20px;
 	text-align: center;
+	padding: 10px 0px;
 	img {
 		display: inline-block;
-		width: 33px;
-		height: 33px;
+		width: 31px;
+		height: 31px;
 		opacity: 0.5;
 		cursor: pointer;
+		@include smoth(0.5s);
 		&:hover {
-			animation:spin 2s linear infinite;
+			width: 37px;
+			height: 37px;
 		}
-		@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-		@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-		@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 	}
 }
 

@@ -25,10 +25,10 @@ class AdminLayout extends React.Component {
 							<img className="user-avatar" src={avatar}/>
 							<div className="user-info-wrapper">
 								<span className="user-name">{name}&nbsp;
-									<Link to="/settings" activeClassName="active"><i className="fa fa-cog"></i></Link>
+									<Link to="/settings" activeClassName="active"><i className="lnr lnr-cog"></i></Link>
 								</span>
 								<span className="user-role">({role})&nbsp;</span>
-								<span className="logout" onClick={this.props.unsetUser}>Logout&nbsp;<i className="fa fa-sign-out"></i></span>
+								<span className="logout" onClick={this.props.unsetUser}>Logout&nbsp;<span className="lnr lnr-exit"></span></span>
 							</div>
 						</div>
 					</div>

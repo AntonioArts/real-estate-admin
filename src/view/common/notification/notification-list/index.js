@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import NotificationsItem from '../notification-item';
+import classnames from 'classnames';
 
 //Redux staff
 import { connect } from 'react-redux';
@@ -9,7 +10,7 @@ class NotificationsList extends React.Component {
 	render() {
 		const { notificationDelete } = this.props;
 		return (
-			<div className="notifications">
+			<div className={classnames('notifications', {'notifications-active': this.props.messages.length > 0})}>
 			{this.props.messages.map(message =>
 				<NotificationsItem key={message.id} message={message} notificationDelete={notificationDelete}/>
 			)}
