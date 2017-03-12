@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Root } from './Root';
-import { store } from './state/store';
+import { store } from './core/store';
 
 //Auth
-import { authUtils } from './state/auth/utils';
+import { authUtils } from './core/auth/utils';
 
 //Set user if localStorage JWT exists
 authUtils.setUserSession(store);

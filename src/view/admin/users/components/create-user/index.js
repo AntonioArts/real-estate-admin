@@ -2,6 +2,9 @@ import React from 'react';
 import { TextInput } from '../../../../common/form/text-input';
 import { AvatarInput } from '../../../../common/form/avatar-input';
 
+//Utils
+import { userUtils } from '../../../../../core/user/utils';
+
 class CreateUser extends React.Component {
 	constructor(props) {
 		super(props);
@@ -11,8 +14,7 @@ class CreateUser extends React.Component {
 			name: '',
 			email: '',
 			phone: '',
-			validate: '',
-			error: ''
+			validation: {}
 		};
 
 		this.handleAvatarChange = this.handleAvatarChange.bind(this);
@@ -20,8 +22,14 @@ class CreateUser extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleAvatarChange(src) {
-		this.setState({avatar: src});
+	handleAvatarChange(event) {
+		if(event.target.files[0]) {
+			this.props.uploadAvatar(event.target.files[0])
+			.then(
+				(response) => {this.setState({avatar: response.data.src})},
+				(error) => {console.log('Error', error)}
+			);
+		}
 	}
 
 	handleInputChange(event) {
@@ -62,28 +70,28 @@ class CreateUser extends React.Component {
 				<form className="create-user-form" onSubmit={this.handleSubmit} autoComplete="off">
 					<AvatarInput
 						avatar={ this.state.avatar }
-						handleAvatarChange={ this.handleAvatarChange }
+						onChange={ this.handleAvatarChange }
 					/>
 					<TextInput
 						label="Name"
 						name="name"
 						type="text"
 						value={this.state.name}
-						handleInputChange={ this.handleInputChange }
+						onChange={ this.handleInputChange }
 					/>
 					<TextInput
 						label="E-mail"
 						name="email"
 						type="text"
 						value={this.state.email}
-						handleInputChange={ this.handleInputChange }
+						onChange={ this.handleInputChange }
 					/>
 					<TextInput
 						label="Phone"
 						name="phone"
 						type="text"
 						value={this.state.phone}
-						handleInputChange={ this.handleInputChange }
+						onChange={ this.handleInputChange }
 					/>
 					{ this.state.validate ? <div className="error-indicator">{this.state.validate}</div> : '' }
 					{ this.state.error ? <div className="error-indicator">{this.state.error}</div> : '' }

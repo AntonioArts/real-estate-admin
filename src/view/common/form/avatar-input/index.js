@@ -1,20 +1,16 @@
 import React, { PropTypes } from 'react';
 
-export const AvatarInput = (props) => {
-	const uploadAvatar = (event) => {
-		props.handleAvatarChange('/static/images/user/default.png');
-	}
-
+export const AvatarInput = ({avatar, onChange}) => {
 	return (
 		<div className="avatar-input">
 			<label htmlFor="file-input">
 				<span>Upload Avatar</span>
-				<img src={ props.avatar }/>
+				<img src={ avatar }/>
 				<input
 					id="file-input"
 					name="avatar"
 					type="file"
-					onChange={ uploadAvatar }
+					onChange={ onChange }
 				/>
 			</label>
 		</div>
@@ -23,5 +19,5 @@ export const AvatarInput = (props) => {
 
 AvatarInput.propTypes = {
 	avatar: PropTypes.string.isRequired,
-	handleAvatarChange: PropTypes.func.isRequired
+	onChange: PropTypes.func.isRequired
 }

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { authUtils } from '../../../../state/auth/utils';
+import { authUtils } from '../../../../core/auth/utils';
 import { TextInput } from '../../../common/form/text-input';
 
 export default class LoginForm extends React.Component {

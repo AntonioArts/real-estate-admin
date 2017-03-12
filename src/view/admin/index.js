@@ -3,7 +3,7 @@ import { Link, IndexLink } from 'react-router';
 import NotificationList from '../common/notification/notification-list';
 
 //Redux staff
-import { authActions } from '../../state/auth/actions';
+import { authActions } from '../../core/auth/actions';
 import { connect } from 'react-redux';
 
 class AdminLayout extends React.Component {

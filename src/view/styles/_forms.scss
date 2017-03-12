@@ -72,11 +72,9 @@
 		border: 2px solid #e0d6fd;
 		border-radius: 100%;
 		cursor: pointer;
-		opacity: 0.8;
 		@include smoth(0.5s);
 		&:hover {
 			border: 2px solid #7055c1;
-			opacity: 1;
 		}
 	}
 	#file-input {

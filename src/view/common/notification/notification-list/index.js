@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 //Redux staff
 import { connect } from 'react-redux';
-import { notificationActions } from '../../../../state/notification/actions';
+import { notificationActions } from '../../../../core/notification/actions';
 
 class NotificationsList extends React.Component {
 	render() {

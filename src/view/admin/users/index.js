@@ -4,7 +4,7 @@ import UsersList from './components/users-list';
 
 //Redux staff
 import { connect } from 'react-redux';
-import { userActions } from '../../../state/user/actions';
+import { userActions } from '../../../core/user/actions';
 
 class Users extends React.Component {
 	constructor(props) {
@@ -41,6 +41,7 @@ class Users extends React.Component {
 			<div className="user-page">
 				<CreateUser
 					createUser={ this.createUser }
+					uploadAvatar={ this.props.uploadAvatar }
 				/>
 				<UsersList
 					users={ this.props.users }
@@ -64,6 +65,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
 	fetchUsers: userActions.fetchUsers,
+	uploadAvatar: userActions.uploadAvatar,
 	createUser: userActions.createUser,
 	deleteUser: userActions.deleteUser
 }

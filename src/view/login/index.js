@@ -7,7 +7,7 @@ import classnames from 'classnames';
 
 //Redux staff
 import { connect } from 'react-redux';
-import { authActions } from '../../state/auth/actions';
+import { authActions } from '../../core/auth/actions';
 
 class LoginLayout extends React.Component {
 	render() {
